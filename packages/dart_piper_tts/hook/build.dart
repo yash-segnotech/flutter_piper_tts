@@ -6,6 +6,11 @@ import 'package:native_toolchain_rust/native_toolchain_rust.dart';
 
 void main(List<String> args) async {
   await build(args, (input, output) async {
+    if (!input.config.buildCodeAssets) {
+      stdout.write('Skipping: this invocation is not building code assets');
+      return;
+    }
+
     if (input.config.code.targetArchitecture == Architecture.x64 &&
         input.config.code.targetOS == OS.macOS) {
       stdout.write('Skipping intel mac, ort does not support it');
