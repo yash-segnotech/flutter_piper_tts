@@ -1,4 +1,4 @@
-name: piper_tts
+name: dart_piper_tts
 environment:
   sdk: ">=3.11.5 <4.0.0"
 dev_dependencies:
